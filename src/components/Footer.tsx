@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Twitter, Linkedin, Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -16,18 +16,22 @@ const Footer: React.FC = () => {
                 CYBER<span className="text-cyan-400">DOMINION</span>
               </span>
             </Link>
+
             <p className="text-slate-500 max-w-sm mb-6">
-              Empowering the next generation of engineers and securing the digital future of enterprise. Elite tech education and professional services combined.
+              Empowering the next generation of engineers and securing the digital future of enterprise.
+              Elite tech education and professional services combined.
             </p>
           </div>
-          
+
           <div>
-            <h4 className="font-orbitron font-bold text-slate-50 mb-6 uppercase text-xs tracking-widest">Navigation</h4>
+            <h4 className="font-orbitron font-bold text-slate-50 mb-6 uppercase text-xs tracking-widest">
+              Navigation
+            </h4>
             <ul className="space-y-4">
               {['Home', 'Academy', 'Services', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                  <Link
+                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                     className="text-slate-500 hover:text-cyan-400 transition-colors text-sm"
                   >
                     {item}
@@ -38,27 +42,61 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-orbitron font-bold text-slate-50 mb-6 uppercase text-xs tracking-widest">Legal</h4>
+            <h4 className="font-orbitron font-bold text-slate-50 mb-6 uppercase text-xs tracking-widest">
+              Legal
+            </h4>
             <ul className="space-y-4">
               {['Privacy Policy', 'Terms of Service', 'Security Protocols'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors text-sm">{item}</a>
+                  <a
+                    href="#"
+                    className="text-slate-500 hover:text-cyan-400 transition-colors text-sm"
+                  >
+                    {item}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        
+
+        {/* Bottom bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-slate-600 text-xs">
             © {new Date().getFullYear()} Cyber Dominion. All rights reserved.
           </p>
+
+          {/* Social Icons */}
           <div className="flex space-x-6">
-            {['Twitter', 'LinkedIn', 'GitHub'].map((social) => (
-              <a key={social} href="#" className="text-slate-600 hover:text-slate-400 transition-colors text-xs font-bold uppercase tracking-widest">
-                {social}
-              </a>
-            ))}
+            <a
+              href="https://twitter.com/cyber_dominions"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="text-slate-600 hover:text-cyan-400 transition-colors hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+            >
+              <Twitter size={25} />
+            </a>
+
+            <a
+              href="https://linkedin.com/company/cyber-dominion"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-600 hover:text-cyan-400 transition-colors hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+            >
+              <Linkedin size={25} />
+            </a>
+
+            <a
+              href="https://github.com/cyberdominion"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-slate-600 hover:text-cyan-400 transition-colors hover:drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+            >
+              <Github size={25} />
+            </a>
           </div>
         </div>
       </div>
